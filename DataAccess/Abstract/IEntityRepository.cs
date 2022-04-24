@@ -13,7 +13,7 @@ namespace DataAccess.Abstract
     public interface IEntityRepository<T> where T : class, IEntity, new()
     {
         List<T> GetAll(Expression<Func<T, bool>> filter = null);
-        T Get(Expression<Func<T, bool>> filter); ///Tek bir data getirmek için. Bir sistemde bir verinin detayına gitmek için kullanılır. 
+        T Get(Expression<Func<T, bool>> filter); //Tek bir data getirmek için. Bir sistemde bir verinin detayına gitmek için kullanılır. 
         void Add(T entity);
         void Update(T entity);
         void Delete(T entity);
