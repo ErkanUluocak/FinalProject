@@ -45,10 +45,11 @@ namespace DataAccess.Concrete.InMemory
             //    }
             //}
 
-            //SingleOrDefault : Tek bir eleman bulmaya yarar. Ürünleri tek tek dolaşır. (Yukarıdaki foreach döngüsünün yaptığı işlemi SingleOrDefault yapar.) (Parantez içindeki ifade ise if bloğunda yaptığımız işlemi yapar.) En son dönen değeri productToDelete değerine eşitler. Remove metodı ile ise ürünü siliyoruz. SingleOrDefault metodunu id bazlı yapılarda kullanılır. Çünkü sorgu sonucunda iki değer gelirse hata verir. Daha güvenli oluyor.
+            //SingleOrDefault : Tek bir eleman bulmaya yarar. Ürünleri tek tek dolaşır. (Yukarıdaki foreach döngüsünün yaptığı işlemi           
+            //SingleOrDefault yapar.) (Parantez içindeki ifade ise if bloğunda yaptığımız işlemi yapar.) En son dönen değeri productToDelete değerine eşitler. Remove metodu ile ise ürünü siliyoruz. SingleOrDefault metodunu id bazlı yapılarda kullanılır. Çünkü sorgu sonucunda iki değer gelirse hata verir. Daha güvenli oluyor.
+            //p : listeyi dolaşırken her bir elemana verdiği takma isim.
 
             Product productToDelete = _products.SingleOrDefault(p => p.ProductId == product.ProductId);
-
             _products.Remove(productToDelete);
         }
 
@@ -76,7 +77,7 @@ namespace DataAccess.Concrete.InMemory
         public void Update(Product product)
         {
             //Gönderdiğim ürün id'sine sahip olan listedeki ürün idsini(ürünü) bul demek. Ki biz onu güncelleyebilelim.
-            //ProductToDelete artık benim listedeki elemanımın (ürünüm). (Referans adresini tutuyor) Yani listediki ürünüm.
+            //ProductToUpdate artık benim listedeki elemanımın (ürünüm). (Referans adresini tutuyor) Yani listediki ürünüm.
 
             Product productToUpdate = _products.SingleOrDefault(p => p.ProductId == product.ProductId);
             productToUpdate.ProductName = product.ProductName;
