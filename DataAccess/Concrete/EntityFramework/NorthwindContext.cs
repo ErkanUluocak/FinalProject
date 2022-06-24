@@ -11,7 +11,7 @@ namespace DataAccess.Concrete.EntityFramework
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //Sql Server'a kullanacağım. Sql Server'a nasıl bağlanacağını belirtiyorum.
+            //Sql Server kullanacağım. Sql Server'a nasıl bağlanacağını belirtiyorum.
             //Başına @ işareti koyduğumuzda özel karakterlerin önüne geçmiş oluyoruz.
 
             optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=Northwind;Trusted_Connection=true");
