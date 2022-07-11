@@ -13,8 +13,6 @@ namespace ConsoleUI
             //CategoryTest();
 
 
-
-
         }
 
         private static void CategoryTest()
@@ -32,12 +30,24 @@ namespace ConsoleUI
 
             ProductManager productManager = new ProductManager(new EfProductDal());
 
-            foreach (var product in productManager.GetProductDetails())
-            {
-                Console.WriteLine(product.ProductName + "-" + product.CategoryName);
+            var result = productManager.GetProductDetails();
 
-                //Console.WriteLine($"{product.ProductId} {product.ProductName} {product.CategoryId} {product.UnitPrice} {product.UnitsInStock}");
+            if (result.Success)
+            {
+                foreach (var product in result.Data)
+                {
+                    Console.WriteLine(product.ProductName + " - " + product.CategoryName);
+
+                    //Console.WriteLine($"{product.ProductId} {product.ProductName} {product.CategoryId} {product.UnitPrice} {product.UnitsInStock}");
+                }
             }
+            else
+            {
+                Console.WriteLine(result.Message);
+            }
+
+
+
 
             //foreach (var product in productManager.GetByUnitPrice(40, 100))
             //{
