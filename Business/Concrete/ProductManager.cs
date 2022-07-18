@@ -14,7 +14,7 @@ namespace Business.Concrete
     {
         IProductDal _productDal;
 
-        //ProductManager new lendiğinde constructor diyor ki bana bir tane IProductDal ver demek. İstersem EntityFramework istersem  ınmemory ya da başka bir şey verebilirim.
+        //ProductManager new lendiğinde constructor diyor ki bana bir tane IProductDal ver demek. İstersem EntityFramework istersem  InMemory ya da başka bir şey verebilirim.
         public ProductManager(IProductDal productDal)
         {
             _productDal = productDal;
