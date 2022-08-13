@@ -9,8 +9,8 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            ProductTest();
-            //CategoryTest();
+            //ProductTest();
+            CategoryTest();
 
 
         }
@@ -18,7 +18,7 @@ namespace ConsoleUI
         private static void CategoryTest()
         {
             CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
-            foreach (var category in categoryManager.GetAll())
+            foreach (var category in categoryManager.GetAll().Data)
             {
                 Console.WriteLine(category.CategoryName);
             }
@@ -40,6 +40,8 @@ namespace ConsoleUI
 
                     //Console.WriteLine($"{product.ProductId} {product.ProductName} {product.CategoryId} {product.UnitPrice} {product.UnitsInStock}");
                 }
+                Console.WriteLine(result.Message);
+
             }
             else
             {
