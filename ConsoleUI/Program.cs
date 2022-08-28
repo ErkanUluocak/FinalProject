@@ -40,15 +40,13 @@ namespace ConsoleUI
 
                     //Console.WriteLine($"{product.ProductId} {product.ProductName} {product.CategoryId} {product.UnitPrice} {product.UnitsInStock}");
                 }
-                Console.WriteLine(result.Message);
+                Console.WriteLine(result.Message); 
 
             }
             else
             {
                 Console.WriteLine(result.Message);
             }
-
-
 
 
             //foreach (var product in productManager.GetByUnitPrice(40, 100))
