@@ -28,7 +28,7 @@ namespace ConsoleUI
         {
             //Burada hangi veri yöntemi ile çalıştığını söylememiz gerekiyor. Constructor metot ile bunu veriyoruz.
 
-            ProductManager productManager = new ProductManager(new EfProductDal());
+            ProductManager productManager = new ProductManager(new EfProductDal(), new CategoryManager(new EfCategoryDal()));
 
             var result = productManager.GetProductDetails();
 
@@ -40,7 +40,7 @@ namespace ConsoleUI
 
                     //Console.WriteLine($"{product.ProductId} {product.ProductName} {product.CategoryId} {product.UnitPrice} {product.UnitsInStock}");
                 }
-                Console.WriteLine(result.Message); 
+                Console.WriteLine(result.Message);
 
             }
             else
