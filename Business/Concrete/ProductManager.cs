@@ -38,7 +38,7 @@ namespace Business.Concrete
             //Validation kodunu burada yapmaktansa, Ascept Attribute başta yerine yapıyor.
             //business codes
 
-            IResult result = BusinessRules.Run(CheckIfTheProductNameExists(product.ProductName), CheckIfProductCountCategoryCorrect(product.CategoryId), CheckIfCategorYLimitExceded());
+            IResult result = BusinessRules.Run(CheckIfTheProductNameExists(product.ProductName), CheckIfProductCountCategoryCorrect(product.CategoryId), CheckIfCategoryLimitExceded());
 
             if (result != null)
             {
@@ -115,7 +115,7 @@ namespace Business.Concrete
             return new SuccessResult();
         }
 
-        private IResult CheckIfCategorYLimitExceded()
+        private IResult CheckIfCategoryLimitExceded()
         {
             var result = _categoryService.GetAll();
             if (result.Data.Count > 15)
